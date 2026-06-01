@@ -1,0 +1,11 @@
+{
+  "llm_result_id": "ca_987234",
+  "corporate_action": "Merger",
+  "confidence": 0.95,
+  "top_tickers_with_liquidity": [
+    { "ticker": "AAPL", "adv": 52000000 },
+    { "ticker": "MSFT", "adv": 23000000 },
+    { "ticker": "NVDA", "adv": 18000000 }
+  ],
+  "primary_ticker_liquidity": 52000000
+}
