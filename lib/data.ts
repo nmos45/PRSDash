@@ -1,7 +1,11 @@
 import { CorporateAction } from "../types";
+// import sql from './db'; // Uncomment for real DB
 
 export async function getDashboardData(): Promise<CorporateAction[]> {
-  // Mock data for development
+  /**
+   * MOCK DATA FOR DEVELOPMENT
+   * Comment this block and uncomment the section below to use the real database.
+   */
   const mockData: CorporateAction[] = [
     {
       llmResultId: "1",
@@ -60,187 +64,24 @@ export async function getDashboardData(): Promise<CorporateAction[]> {
       topTickersWithLiquidity: [{ ticker: "GOOGL", adv: 15000000 }],
       primaryTickerLiquidity: 15000000,
     },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
-    {
-      llmResultId: "2",
-      eventType: "Merger & Acquisition",
-      confidence: "medium",
-      keyDetails:
-        "Acme Corp is in advanced talks to acquire Cyberdyne Systems for approximately $2.5 billion in a cash-and-stock deal. The transaction is expected to close in Q4 2026.",
-      reasoning:
-        "Inferred from news reports and unusual trading activity; official confirmation pending.",
-      documentPath: "/docs/news/merger_rumor_772.pdf",
-      sourceCreatedAt: new Date("2026-05-31T14:30:00Z"),
-      topTickersWithLiquidity: [
-        { ticker: "ACME", adv: 1200000 },
-        { ticker: "CYB", adv: 450000 },
-      ],
-      primaryTickerLiquidity: 1200000,
-    },
   ];
 
-  // Simulate network delay
   await new Promise((resolve) => setTimeout(resolve, 500));
-
   return mockData;
+
+  /**
+   * REAL DATABASE LOGIC
+   * Uncomment this section and the import at the top to use the real database.
+   *
+   * try {
+   *   const data = await sql<CorporateAction[]>`
+   *     SELECT * FROM corporate_actions_dashboard_view
+   *     ORDER BY source_created_at DESC
+   *   `;
+   *   return data;
+   * } catch (error) {
+   *   console.error('Database Error:', error);
+   *   throw new Error('Failed to fetch dashboard data');
+   * }
+   */
 }

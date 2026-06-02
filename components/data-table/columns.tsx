@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { ColumnDef } from "@tanstack/react-table"
-import { CorporateAction } from "@/types"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { 
-  MoreHorizontal, 
-  ExternalLink, 
-  CheckCircle2, 
-  Clock, 
+import { ColumnDef } from "@tanstack/react-table";
+import { CorporateAction } from "@/types";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  MoreHorizontal,
+  ExternalLink,
+  CheckCircle2,
+  Clock,
   AlertCircle,
   FileText,
-  ArrowUpDown
-} from "lucide-react"
+  ArrowUpDown,
+} from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,8 +20,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { format } from "date-fns"
+} from "@/components/ui/dropdown-menu";
+import { format } from "date-fns";
 
 export const columns: ColumnDef<CorporateAction>[] = [
   {
@@ -33,7 +33,9 @@ export const columns: ColumnDef<CorporateAction>[] = [
   {
     accessorKey: "eventType",
     header: ({ column }) => (
-      <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Event Type</div>
+      <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+        Event Type
+      </div>
     ),
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
@@ -59,13 +61,17 @@ export const columns: ColumnDef<CorporateAction>[] = [
       </div>
     ),
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("primaryTickerLiquidity"))
+      const amount = parseFloat(row.getValue("primaryTickerLiquidity"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
         notation: "standard",
-      }).format(amount)
-      return <div className="font-bold text-[14px] text-right text-foreground">{formatted}</div>
+      }).format(amount);
+      return (
+        <div className="font-bold text-[14px] text-right text-foreground">
+          {formatted}
+        </div>
+      );
     },
   },
   {
@@ -81,38 +87,40 @@ export const columns: ColumnDef<CorporateAction>[] = [
       </Button>
     ),
     cell: ({ row }) => {
-      const date = new Date(row.getValue("sourceCreatedAt"))
+      const date = new Date(row.getValue("sourceCreatedAt"));
       return (
         <div className="text-[13px] text-muted-foreground whitespace-nowrap">
           {format(date, "MM/dd/yy, hh:mm a")}
         </div>
-      )
+      );
     },
   },
   {
     accessorKey: "confidence",
     header: ({ column }) => (
-      <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Status</div>
+      <div className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+        Confidence
+      </div>
     ),
     cell: ({ row }) => {
-      const confidence = row.getValue("confidence") as string
-      
+      const confidence = row.getValue("confidence") as string;
+
       if (confidence === "high") {
         return (
           <Badge className="bg-[var(--color-status-success-bg)] text-[var(--color-status-success-text)] border-[var(--color-status-success-border)] hover:bg-[var(--color-status-success-bg)] shadow-none font-medium px-2 py-0.5 gap-1 capitalize border">
             <CheckCircle2 className="h-3 w-3" />
             Succeeded
           </Badge>
-        )
+        );
       }
-      
+
       if (confidence === "medium") {
         return (
           <Badge className="bg-[var(--color-status-pending-bg)] text-[var(--color-status-pending-text)] border-[var(--color-status-pending-border)] hover:bg-[var(--color-status-pending-bg)] shadow-none font-medium px-2 py-0.5 gap-1 capitalize border">
             <Clock className="h-3 w-3" />
             Pending
           </Badge>
-        )
+        );
       }
 
       return (
@@ -120,7 +128,7 @@ export const columns: ColumnDef<CorporateAction>[] = [
           <AlertCircle className="h-3 w-3" />
           {confidence}
         </Badge>
-      )
+      );
     },
   },
   {
@@ -129,7 +137,10 @@ export const columns: ColumnDef<CorporateAction>[] = [
       <div className="text-right">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground">
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
+            >
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -146,4 +157,4 @@ export const columns: ColumnDef<CorporateAction>[] = [
       </div>
     ),
   },
-]
+];
